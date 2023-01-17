@@ -12,6 +12,7 @@ my_cur = my_cnx.cursor()
 #streamlit.text(my_data_row)
 
 # run a snowflake query and put it all in a var called my_catalog 
+my_cur.execute("use role sysadmin")
 my_cur.execute("select color_or_style from zenas_athleisure_db.products.catalog_for_website")
 my_catalog = my_cur.fetchall()
 # put the data into a dataframe
